@@ -1,0 +1,72 @@
+<main role="main">
+
+  <div class="container">
+    <div class="row">
+      <div class="ml-auto mr-auto">
+        <mat-card>
+          <table>
+            <tr>
+              <td>
+                <div [ngSwitch]="data?.Poster === 'N/A' || data?.Poster !== 'N/A'">
+                  <img mat-card-imag class="img-responsive" *ngSwitchCase="data?.Poster !== 'N/A'"
+                    src="{{data?.Poster}}">
+                  <img mat-card-imag class="img-responsive" *ngSwitchCase="data?.Poster === 'N/A'"
+                    src="https://placeimg.com/300/415/any">
+                </div>
+              </td>
+              <td>
+                <mat-card-header>
+                  <div mat-card-avatar>
+                    <span *ngIf="data?.Metascore && data?.Metascore !== 'N/A'">{{ data?.Metascore }}</span>
+                    <h3 *ngIf="data?.imdbRating && data?.imdbRating !== 'N/A'">{{ data?.imdbRating }}</h3>
+                  </div>
+                  <mat-card-title>{{ data?.Title }} ({{ data?.Year }})</mat-card-title>
+                  <mat-card-subtitle>
+                    <span *ngIf="data?.Rated && data?.Rated !== 'N/A'"> {{ data?.Rated }} |</span>
+                    <span *ngIf="data?.Runtime && data?.Runtime !== 'N/A'"> {{ data?.Runtime }} |</span>
+                    <span *ngIf="data?.Genre && data?.Genre !== 'N/A'"> {{ data?.Genre }} |</span>
+                    <span *ngIf="data?.Language && data?.Language !== 'N/A'"> {{ data?.Language }} |</span>
+                    <span *ngIf="data?.Released && data?.Released !== 'N/A'"> {{ data?.Released }}</span>
+                    <span *ngIf="data?.Country && data?.Country !== 'N/A'"> ({{ data?.Country }}) </span>
+                  </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <div>
+                    <div *ngIf="data?.Awards && data?.Awards !== 'N/A'" class="text-success">
+                      <em>Awards</em>
+                      <p>{{ data?.Awards }}</p>
+                    </div>
+                    <div *ngIf="data?.Plot && data?.Plot !== 'N/A'">
+                      <em>Summary</em>
+                      <p>{{ data?.Plot }}</p>
+                    </div>
+                    <div *ngIf="data?.Director && data?.Director !== 'N/A'">
+                      <em>Director</em>
+                      <p>{{ data?.Director }}</p>
+                    </div>
+                    <div *ngIf="data?.Writer && data?.Writer !== 'N/A'">
+                      <em>Writer</em>
+                      <p>{{ data?.Writer }}</p>
+                    </div>
+                    <div *ngIf="data?.Actors && data?.Actors !== 'N/A'">
+                      <em>Actors</em>
+                      <p>{{ data?.Actors }}</p>
+                    </div>
+                    <div *ngIf="data?.Production && data?.Production !== 'N/A'">
+                      <em>Production</em>
+                      <p>{{ data?.Production }}</p>
+                    </div>
+                    <div>
+                      <a href="http://www.imdb.com/title/{{value}}" target="_blank">See more at Imdb</a>
+                    </div>
+                  </div>
+                </mat-card-content>
+              </td>
+            </tr>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+</main>

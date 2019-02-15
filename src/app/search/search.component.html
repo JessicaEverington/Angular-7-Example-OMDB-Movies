@@ -1,0 +1,52 @@
+<main role="main">
+
+  <div class="container">
+    <div class="row">
+      <div class="ml-auto mr-auto">
+        <mat-card class="search-box">
+          <div class="container">
+            <form>
+              <mat-form-field appearance="standard" class="search-input">
+                <mat-label>Search</mat-label>
+                <input matInput [formControl]="searchFormControl" type="text" autocomplete="off" autofocus>
+                <mat-hint>Movie title, keyword, ...</mat-hint>
+              </mat-form-field>
+              <button mat-fab class="search-button" (click)="refresh()">
+                <mat-icon>search</mat-icon>
+              </button>
+            </form>
+            <br>
+            <p>{{msg}}</p>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+    <div *ngIf="!isDone">
+      <div class="row">
+        <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    </div>
+
+    <div *ngIf="isDone">
+      <div class="row">
+        <div *ngFor="let movie of movies">
+          <mat-card class="link" (click)="gotoDetails(movie)">
+            <div [ngSwitch]="movie.Poster === 'N/A' || movie.Poster !== 'N/A'">
+              <img mat-card-imag class="img-responsive" *ngSwitchCase="movie.Poster !== 'N/A'" src="{{movie.Poster}}">
+              <img mat-card-imag class="img-responsive" *ngSwitchCase="movie.Poster === 'N/A'"
+                src="http://www.novelupdates.com/img/noimagefound.jpg">
+            </div>
+            <h4>{{movie.Title}}</h4>
+            <h5>{{movie.Year}}</h5>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>

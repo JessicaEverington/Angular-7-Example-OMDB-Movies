@@ -81,7 +81,7 @@ export class SearchComponent implements OnInit {
 
       localStorage.setItem(this.history_key, JSON.stringify(history));
     } catch (e) {
-      localStorage.setItem(this.history_key, JSON.stringify([]));
+      localStorage.setItem(this.history_key, JSON.stringify([data]));
 
       console.log(e)
     }

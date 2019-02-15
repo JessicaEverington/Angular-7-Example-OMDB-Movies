@@ -5,7 +5,7 @@ This project is implemented as a part of internship assignment given by Fyle.
 ### Heroku
 
 Project is auto-deployed to heroku using Github integration.
-Live at https://fyleinternassignment.herokuapp.com.
+Live at https://fyleinternassignment.herokuapp.com
 
 ### Details
 
@@ -27,3 +27,9 @@ npm install
 npm run postinstall
 npm run start
 ```
+
+### Screenshots
+
+![1 - Search](screenshots/1.jpg?raw=true "1")
+![2 - Details](screenshots/2.jpg?raw=true "2")
+![3 - History](screenshots/3.jpg?raw=true "1")

@@ -25,5 +25,5 @@ For live,
 ```
 npm install
 npm run postinstall
-npm run strat
+npm run start
 ```

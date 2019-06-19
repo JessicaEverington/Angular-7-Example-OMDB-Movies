@@ -1,4 +1,4 @@
-# angular7-example
+# Angular 7 Example: OMDB Movies
 
 ### Details
 
